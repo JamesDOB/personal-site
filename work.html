@@ -62,6 +62,13 @@ footer{padding:1.75rem 2.5rem;border-top:1px solid var(--border2);display:flex;j
 footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.06em}
 .fdot{width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;margin:0 .75rem;vertical-align:middle}
 @media(max-width:900px){body{cursor:auto}#cursor{display:none}.case-grid{grid-template-columns:1fr}.page-hero,.cases{padding-left:1.5rem;padding-right:1.5rem}nav{padding:1.25rem 1.5rem}footer{flex-direction:column;gap:.5rem;text-align:center}}
+
+.case-photos{display:flex;gap:1rem;margin-bottom:2rem;align-items:flex-end}
+.case-photo{overflow:hidden;border-radius:2px;flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.case-photo img{display:block;width:100%;height:100%;object-fit:cover;filter:brightness(.95)}
+.case-photo.p1{width:38%;height:160px;transform:rotate(-1.5deg)}
+.case-photo.p2{width:32%;height:190px;transform:rotate(1deg)}
+.case-photo.p3{width:30%;height:150px;transform:rotate(-0.5deg)}
 </style>
 </head>
 <body>
@@ -128,26 +135,29 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
     <div class="case-body" id="slackbot-body">
       <div class="case-grid">
         <div class="case-content">
-          <div class="photo-placeholder"><span>Photo / Screenshot coming soon</span></div>
+          <div class="case-photos">
+            <div class="case-photo p1"><img src="volunteertestingthread.png" alt="Volunteer testing thread"/></div>
+            <div class="case-photo p2"><img src="intimenudge.png" alt="In-time nudge from Glopple Bot"/></div>
+            <div class="case-photo p3"><img src="adminview.png" alt="Admin high-risk incident view"/></div>
+          </div>
           <div class="case-section-label">The Problem</div>
-          <p>A Slack community of 20,000+ tutors is a lot to manage. Policy violations were happening in real time, high-risk interactions were hard to surface, and volunteer moderators had no reliable tools to do their jobs consistently. The community was growing faster than our ability to keep it safe.</p>
+          <p>A Slack workspace of 20,000+ tutors and volunteers is a lot to manage. Policy violations were happening in real time, high-risk interactions were hard to surface, and the people keeping it safe were me and a small handful of volunteers doing it manually. It wasn&rsquo;t scalable. It wasn&rsquo;t sustainable.</p>
           <div class="case-section-label">The Approach</div>
-          <p>I built out a moderation infrastructure layer &mdash; automated workflows and custom Slackbots designed to do the work that doesn't scale manually.</p>
-          <ul class="case-bullets">
-            <li>Built custom Slackbots to reinforce community policy passively and consistently</li>
-            <li>Created automated workflows to flag and surface high-risk interactions for human review</li>
-            <li>Designed systems to strengthen day-to-day engagement and reduce moderator burden</li>
-            <li>Paired the tooling with updated moderator training and escalation protocols</li>
-          </ul>
-          <div class="case-section-label">The Outcome</div>
-          <p>The community became meaningfully easier to manage at scale. Moderators had better tools, risky interactions got caught earlier, and the day-to-day health of the community improved &mdash; all without growing the moderation team headcount.</p>
+          <p>I owned this end-to-end. Claude served as a collaborative thought partner throughout &mdash; working through architecture, pressure-testing logic, and helping translate technical tradeoffs into plain language. I also brought in a trusted group of active volunteers to test the bot in real conditions and provide feedback, which meaningfully shaped V2.</p>
+          <div class="case-section-label">The Build</div>
+          <p>I built V1 from scratch &mdash; scoping which channels to monitor, what categories of risk to detect, how to handle each severity level, and what to say to users when something was flagged. After running it live and incorporating feedback from the volunteer testing group, I identified core areas for improvement.</p>
+          <p>V2 is a lot smarter. Every risk category got pressure-tested against feedback from volunteers. The highest-risk stuff goes straight to a dedicated alert channel for me and my team to review, and lower-severity violations get a warm nudge &mdash; corrective, not punitive &mdash; before anything escalates. I also moved it off my local machine and onto Railway, so it runs 24/7 without me needing to be at my laptop &mdash; necessary for a global community that never really sleeps.</p>
+                    <div class="case-section-label">The Result</div>
+          <p>What was manual, volunteer-dependent, and only active when I was online is now automated and running 24/7 across the highest-risk channels. Every infraction can be tied to a user&rsquo;s account, creating a record that informs moderation decisions over time. Behavioral nudges happen in real-time, catching things early and helping users course-correct in the moment. Now I can turn my Slack alerts off when I go to bed and sleep soundly.</p>
+          <div class="case-section-label">What&rsquo;s Next</div>
+          <p>I&rsquo;m exploring expansions &mdash; powered by Claude &mdash; to capture user feedback and sentiment in real-time, categorizing it automatically for product and community review. The long-term vision is pushing small bug fixes like copy changes directly to the org&rsquo;s GitHub repo as PRs &mdash; a non-technical operator closing the loop between community signal and product response, autonomously.</p>
         </div>
         <div class="case-sidebar">
-          <div class="case-stat-block"><div class="case-stat-num">20K+</div><div class="case-stat-label">Tutors in community</div></div>
-          <div class="case-stat-block"><div class="case-stat-num">0&rarr;1</div><div class="case-stat-label">Infrastructure built from scratch</div></div>
+          <div class="case-stat-block"><div class="case-stat-num">20K+</div><div class="case-stat-label">Tutors &amp; volunteers</div></div>
+          <div class="case-stat-block"><div class="case-stat-num">0&rarr;2</div><div class="case-stat-label">Versions built from scratch</div></div>
+          <div class="case-stat-block"><div class="case-stat-num">24/7</div><div class="case-stat-label">Automated coverage</div></div>
           <div class="case-meta">
             <div class="case-meta-row"><span class="case-meta-key">Org</span><span class="case-meta-val">Schoolhouse.world</span></div>
-            <div class="case-meta-row"><span class="case-meta-key">Role</span><span class="case-meta-val">Learning Community Lead</span></div>
             <div class="case-meta-row"><span class="case-meta-key">Type</span><span class="case-meta-val">Trust &amp; Safety / Tooling</span></div>
           </div>
         </div>
