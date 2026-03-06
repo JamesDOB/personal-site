@@ -70,9 +70,11 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .about-body p{font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:1.4rem}
 .about-body p strong{color:var(--ink);font-weight:600}
 .about-body p:first-child{font-size:1.1rem;color:var(--ink);font-weight:500;line-height:1.7}
-.edu{font-family:'Inconsolata',monospace;font-size:.78rem;color:var(--muted);letter-spacing:.05em;margin-top:.5rem}
+.edu-block{margin-top:1.5rem;display:flex;flex-direction:column;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--border2)}
+.edu-row{font-family:'Inconsolata',monospace;font-size:.75rem;color:var(--muted);letter-spacing:.04em}
+.edu-row span{color:var(--ink)}
 .quotes-col{display:flex;flex-direction:column;gap:1.5rem}
-.quote-card{background:var(--bg3);border:1px solid var(--border);border-left:3px solid var(--gold);padding:1.5rem;position:relative}
+.quote-card{background:var(--bg3);border:1px solid var(--border);border-left:3px solid var(--gold);padding:1.5rem}
 .quote-text{font-family:'Playfair Display',serif;font-size:.95rem;font-style:italic;color:var(--ink);line-height:1.7;margin-bottom:.75rem}
 .quote-attr{font-family:'Inconsolata',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
 .tl-section{background:var(--bg2);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2)}
@@ -95,15 +97,18 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .tl-bullets li{font-size:.9rem;color:var(--muted);line-height:1.65;padding-left:1.25rem;position:relative}
 .tl-bullets li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-size:.75rem}
 .tl-bullets li strong{color:var(--ink);font-weight:600}
+.tl-quote{margin-top:2rem;background:var(--bg);border-left:3px solid var(--gold);padding:1.25rem 1.5rem}
+.tl-quote-text{font-family:'Playfair Display',serif;font-size:.9rem;font-style:italic;color:var(--ink);line-height:1.65;margin-bottom:.5rem}
+.tl-quote-attr{font-family:'Inconsolata',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
 .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
-.work-card{background:var(--bg3);border:1px solid var(--border2);padding:2rem;cursor:none;transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
+.work-card{background:var(--bg3);border:1px solid var(--border2);padding:2rem;cursor:none;transition:border-color .2s,transform .2s;position:relative;overflow:hidden;text-decoration:none;display:block;color:var(--ink)}
 .work-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height .3s}
 .work-card:hover{border-color:var(--border);transform:translateY(-3px)}
 .work-card:hover::before{height:100%}
 .work-card-tag{font-family:'Inconsolata',monospace;font-size:.62rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem}
 .work-card-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:.75rem;line-height:1.2}
 .work-card-desc{font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:1.25rem}
-.work-card-link{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:gap .2s}
+.work-card-link{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:.4rem;transition:gap .2s}
 .work-card:hover .work-card-link{gap:.75rem}
 .work-badge{display:inline-block;font-family:'Inconsolata',monospace;font-size:.6rem;padding:.2rem .5rem;border:1px solid var(--border);color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem}
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:3rem;border:1px solid var(--border2)}
@@ -156,7 +161,7 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="work.html" cursor="none">Case Studies</a></li>
+    <li><a href="work.html">Case Studies</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -167,33 +172,37 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
     <h1 class="hero-name"><span>James</span><span class="it">O'Brien.</span><span class="out">Builder.</span></h1>
     <div class="tw-wrap"><span id="tw"></span></div>
     <div class="hero-rule"></div>
-    <p class="hero-sub">I believe belonging is core to the human experience &mdash; deeply personal and necessary for our social systems and communities to work. Currently head of community at <strong>Schoolhouse.world</strong>, a global nonprofit founded by Sal Khan.</p>
+    <p class="hero-sub">I build communities and scale operational systems for mission-driven organizations &mdash; rooted in a belief that people show up as their best selves when <strong>psychological safety and belonging</strong> are in place.</p>
     <div class="hero-ctas"><a href="#about" class="btn-gold">Learn more</a><a href="#contact" class="btn-ghost">Let's connect</a></div>
   </div>
   <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
 </section>
 <div class="mbar"><div class="mtrack"><span class="mi">Frankenstein</span><span class="mi">Dracula</span><span class="mi">The Divine Comedy</span><span class="mi">Animal Farm</span><span class="mi">The Brief Wondrous Life of Oscar Wao</span><span class="mi">Company K</span><span class="mi">King Henry IV Part 2</span><span class="mi">Frankenstein</span><span class="mi">Dracula</span><span class="mi">The Divine Comedy</span><span class="mi">Animal Farm</span><span class="mi">The Brief Wondrous Life of Oscar Wao</span><span class="mi">Company K</span><span class="mi">King Henry IV Part 2</span></div></div>
 <section class="sec" id="about">
-  <div class="reveal"><div class="clabel">001 &mdash; About</div><h2 class="sh">I make things <em>work</em><br>for real people.</h2></div>
+  <div class="reveal"><div class="clabel">001 &mdash; About</div><h2 class="sh">I take a<br><em>people-first</em> approach.</h2></div>
   <div class="about-grid">
     <div class="about-body reveal d1">
-      <p>Not in a theoretical, deck-slide kind of way. I mean the kind of work where you talk to users until you actually understand what's broken, build the thing, watch it land, and iterate until it's right.</p>
-      <p>My background cuts across <strong>community building, strategy, marketing, customer success, and sales</strong> &mdash; building systems and mechanisms that meet people where they are, to help them get where they want to be.</p>
-      <p>Before I got into tech, I was an <strong>ELA teacher in Brooklyn</strong> &mdash; at the very school I attended as a kid. That experience shaped everything. It's why I care so deeply about EdTech, CivicTech, the social safety net, and adult learning. I know firsthand what it means when those systems work, and what it costs when they don't.</p>
-      <p>Right now I'm deep in <strong>AI-enabled approaches to learning</strong> &mdash; not the hype, the practical stuff. Can AI analyze a tutoring session and give real coaching feedback? Yes. I built it. And in a world where everyone can build, <strong>taste is king.</strong></p>
-      <p class="edu">Cornell University &mdash; Product Marketing Certificate &nbsp;&middot;&nbsp; CUNY Brooklyn College &mdash; M.A. English Education &nbsp;&middot;&nbsp; CCNY &mdash; B.A. English</p>
+      <p>My sweet spot is mission-driven organizations navigating 0&rarr;1 and 1&rarr;10 problems &mdash; especially in K&ndash;12 education. When things get messy, the instinct is to reach for process. I reach for clarity first: clarify decision-making, empower the right people, and build systems that evolve as the work does.</p>
+      <p>My background cuts across <strong>community building, strategy, marketing, customer success, and sales</strong>. The throughline is always the same &mdash; building systems and mechanisms that meet people where they are, to help them get where they want to be.</p>
+      <p>Before I got into tech, I was an <strong>ELA teacher in Brooklyn</strong> &mdash; at the very school I attended as a kid. That experience is the foundation of everything. It&rsquo;s why I care so deeply about EdTech, CivicTech, the social safety net, and adult learning. I know firsthand what it means when those systems work, and what it costs when they don&rsquo;t.</p>
+      <p>Right now I&rsquo;m deep in <strong>AI</strong> &mdash; specifically how it can make learning more human, not less. The feedback loops, the coaching insights, the real-time analysis. That&rsquo;s where I&rsquo;m spending my energy. In a world where everyone can build, <strong>taste is king.</strong></p>
+      <div class="edu-block">
+        <div class="edu-row"><span>Cornell University</span> &mdash; Product Marketing Certificate</div>
+        <div class="edu-row"><span>CUNY Brooklyn College</span> &mdash; M.A. in English Education, 7&ndash;12</div>
+        <div class="edu-row"><span>CCNY</span> &mdash; B.A. in English</div>
+      </div>
     </div>
     <div class="quotes-col reveal d2">
       <div class="quote-card">
-        <div class="quote-text">"James has consistently impressed me with his remarkable problem-solving abilities and analytical mindset &mdash; maintaining a strong focus on inclusivity and equity, resulting in innovative and effective solutions."</div>
-        <div class="quote-attr">Kaina Santana, M.A. &mdash; Direct Report, co:census</div>
+        <div class="quote-text">&ldquo;James was one of the first faces to welcome me to the city and the professional world. The innate skill he has to build community came through in the office, in brainstorming workshops, and at networking events. Any team would be lucky to have him.&rdquo;</div>
+        <div class="quote-attr">Marisa Dinko &mdash; Colleague, co:census</div>
       </div>
       <div class="quote-card">
-        <div class="quote-text">"I've literally learned so much about how to be more professional, how to work with others, how to communicate in different ways. The series he hosted on mod communication literally changed how I relate to others in life."</div>
+        <div class="quote-text">&ldquo;I&rsquo;ve literally learned so much about how to be more professional, how to work with others, how to communicate in different ways. The series he hosted on mod communication literally changed how I relate to others in life.&rdquo;</div>
         <div class="quote-attr">Community Volunteer &mdash; Schoolhouse.world</div>
       </div>
       <div class="quote-card">
-        <div class="quote-text">"You seem like such a good dude. Thanks for all the kind words."</div>
+        <div class="quote-text">&ldquo;You seem like such a good dude. Thanks for all the kind words.&rdquo;</div>
         <div class="quote-attr">Community Member &mdash; Schoolhouse.world</div>
       </div>
     </div>
@@ -201,8 +210,8 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
 </section>
 <div class="tl-section" id="experience"><section class="sec">
   <div class="tl-header reveal">
-    <div><div class="clabel">002 &mdash; Experience</div><h2 class="sh">Where I've<br><em>shown up.</em></h2></div>
-    <p class="tl-intro">I've built from scratch, inherited broken systems, managed through crises, and shipped things I'm proud of. The best work is collaborative, rooted in user pain points, and iterative. Click through.</p>
+    <div><div class="clabel">002 &mdash; Experience</div><h2 class="sh">Where I&rsquo;ve<br><em>shown up.</em></h2></div>
+    <p class="tl-intro">The best work is collaborative, rooted in user pain points, and iterative. I&rsquo;ve learned more from what didn&rsquo;t work than what did.</p>
   </div>
   <div class="reveal d1">
     <div class="tl-nav">
@@ -214,7 +223,7 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
     </div>
     <div class="tl-panels">
       <div class="tl-panel active" id="job0">
-        <div><div class="tl-co">Schoolhouse.world</div><div class="tl-period">Jun 2025 &ndash; Present</div><div class="tl-tag">Current</div></div>
+        <div><div class="tl-co">Schoolhouse.world</div><div class="tl-period">Jun 2025 &ndash; Present</div><div class="tl-tag">Edtech</div></div>
         <div><div class="tl-role">Head of Community (Foundations)</div><ul class="tl-bullets">
           <li>Diagnosed infrastructure strain from rapid growth and built a 6&ndash;12 month roadmap across Community, Trust &amp; Safety, and Volunteer Management</li>
           <li>Leading a team of <strong>3 staff and 25 volunteer leads</strong>, maintaining platform stability (70% belonging, 85 CSAT, 45 NPS) while scaling</li>
@@ -224,19 +233,24 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
       <div class="tl-panel" id="job1">
         <div><div class="tl-co">Schoolhouse.world</div><div class="tl-period">Aug 2023 &ndash; Jun 2025</div><div class="tl-tag">Edtech</div></div>
         <div><div class="tl-role">Learning Community Lead</div><ul class="tl-bullets">
-          <li>Built the College Admissions Workshop Program from scratch: <strong>30 tutors, 150 learners, 95% satisfaction</strong>, 2x marketplace engagement &mdash; became an official program offering</li>
-          <li>Managed the general volunteer program of <strong>100&ndash;200 active volunteers</strong> and community operations for the full user base</li>
-          <li>Redesigned tutor training (LEAD) with an AI feedback loop analyzing session transcripts &mdash; <strong>+10 NPS</strong> across ~300 tutors, +3pt learner talk-time</li>
-          <li>Rebuilt volunteer onboarding from the ground up &mdash; NPS from <strong>+30 to +70</strong>, sustained 85 CSAT/45 NPS across operations</li>
+          <li>Built the College Admissions Workshop from scratch: <strong>30 tutors, 150 learners, 95% satisfaction</strong>, 2x marketplace engagement &mdash; adopted as an official program offering</li>
+          <li>Rebuilt the volunteer experience end-to-end &mdash; ops, management, incentives, recruiting, and onboarding &mdash; for a program of <strong>~200 virtual volunteers</strong> at any given time; NPS from <strong>+30 to +70</strong></li>
+          <li>Redesigned tutor training (LEAD) with an AI-powered feedback loop; ran A/B testing and saw meaningful gains in the experiment arm &mdash; <strong>+10 NPS</strong> and +3pt learner talk-time across ~300 tutors</li>
+          <li>Built scalable feedback cycles (surveys, interviews, spotlights) giving Product and Programs continuous insight into learner and tutor needs</li>
           <li>Built moderation infrastructure for 20K+ tutor Slack with automated workflows and custom Slackbots</li>
-        </ul></div>
+        </ul>
+        <div class="tl-quote">
+          <div class="tl-quote-text">&ldquo;James has consistently impressed me with his remarkable problem-solving abilities &mdash; maintaining a strong focus on inclusivity and equity, resulting in innovative and effective solutions.&rdquo;</div>
+          <div class="tl-quote-attr">Kaina Santana, M.A. &mdash; Direct Report</div>
+        </div>
+        </div>
       </div>
       <div class="tl-panel" id="job2">
         <div><div class="tl-co">co:census</div><div class="tl-period">Jan 2022 &ndash; Aug 2023</div><div class="tl-tag">Civic Tech</div></div>
         <div><div class="tl-role">CS &amp; Product Marketing Lead</div><ul class="tl-bullets">
           <li>After a major contract loss, built Learning Labs &mdash; a pivot that generated <strong>$45K in its first cohort</strong> and gave the company a new revenue line</li>
           <li>Co-designed GTM combining storytelling, public-sector content, conference presence, and grassroots partnerships (Van Alen Institute)</li>
-          <li>Managed enterprise and public-sector accounts, building relationships with B2B &amp; B2G clients while advocating for user needs in product planning</li>
+          <li>Managed enterprise and public-sector accounts across B2B &amp; B2G clients while advocating for user needs in product planning</li>
           <li>Led and mentored CX team of 3, maintained <strong>+60 NPS and 70 CSAT</strong></li>
         </ul></div>
       </div>
@@ -250,7 +264,7 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
       <div class="tl-panel" id="job4">
         <div><div class="tl-co">PS/IS 384, Brooklyn</div><div class="tl-period">Sep 2016 &ndash; Jan 2019</div><div class="tl-tag">Education</div></div>
         <div><div class="tl-role">ELA Teacher</div><ul class="tl-bullets">
-          <li>Designed CCSS-aligned curricula rooted in social relevance and assessment data &mdash; teaching at the school I attended as a kid made this deeply personal</li>
+          <li>Designed CCSS-aligned curricula rooted in social relevance and assessment data &mdash; taught at the school I attended as a kid, which made this deeply personal</li>
           <li>Deepened student engagement and drove stronger end-of-year academic gains through culturally relevant, data-informed instruction</li>
         </ul></div>
       </div>
@@ -258,34 +272,34 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
   </div>
 </section></div>
 <section class="sec" id="projects">
-  <div class="reveal"><div class="clabel">003 &mdash; Case Studies</div><h2 class="sh">Things I've <em>built.</em></h2></div>
+  <div class="reveal"><div class="clabel">003 &mdash; Case Studies</div><h2 class="sh">Things I&rsquo;ve <em>built.</em></h2></div>
   <div class="work-grid reveal d1">
-    <div class="work-card" onclick="window.location='work.html#admissions'">
+    <a href="work.html#admissions" class="work-card">
       <div class="work-card-tag">0&rarr;1 Program Design</div>
       <div class="work-card-title">College Admissions Workshop</div>
       <div class="work-card-desc">Built a full peer tutoring program from scratch &mdash; recruited tutors, validated demand, hit 95% satisfaction, and got it adopted as an official offering.</div>
-      <a href="work.html#admissions" class="work-card-link" cursor="none">Read case study &rarr;</a>
-    </div>
-    <div class="work-card" onclick="window.location='work.html#slackbot'">
+      <div class="work-card-link">Read case study &rarr;</div>
+    </a>
+    <a href="work.html#slackbot" class="work-card">
       <div class="work-card-tag">Trust &amp; Safety &middot; Community</div>
       <div class="work-card-title">Custom Slackbot Infrastructure</div>
-      <div class="work-card-desc">Built automated moderation workflows and custom Slackbots for a 20K+ tutor community &mdash; reinforcing policy, surfacing risk, and strengthening engagement.</div>
-      <a href="work.html#slackbot" class="work-card-link">Read case study &rarr;</a>
-    </div>
-    <div class="work-card" onclick="window.location='work.html#neighborhood'">
+      <div class="work-card-desc">Built automated moderation workflows and custom Slackbots for a 20K+ tutor community &mdash; reinforcing policy, surfacing risk, strengthening engagement.</div>
+      <div class="work-card-link">Read case study &rarr;</div>
+    </a>
+    <a href="work.html#neighborhood" class="work-card">
       <div class="work-card-tag">AI &middot; Product</div>
       <div class="work-card-title">The Neighborhood</div>
       <div class="work-card-desc">An app designed to help you find your people, locally &mdash; focused on building real IRL connections in an increasingly online world.</div>
-      <div class="work-badge">In Progress</div><br/>
-      <a href="work.html#neighborhood" class="work-card-link">Learn more &rarr;</a>
-    </div>
-    <div class="work-card" onclick="window.location='work.html#curriculum'">
+      <div class="work-badge">In Progress</div>
+      <div class="work-card-link">Learn more &rarr;</div>
+    </a>
+    <a href="work.html#curriculum" class="work-card">
       <div class="work-card-tag">Education &middot; Curriculum Design</div>
       <div class="work-card-title">Culturally Relevant Curriculum</div>
-      <div class="work-card-desc">Built a full ELA curriculum from scratch, rooted in social relevance and student identity &mdash; designed for the kids who don't see themselves in the standard canon.</div>
-      <div class="work-badge">Coming Soon</div><br/>
-      <a href="work.html#curriculum" class="work-card-link">Learn more &rarr;</a>
-    </div>
+      <div class="work-card-desc">Built a full ELA curriculum from scratch, rooted in social relevance and student identity &mdash; for the kids who don&rsquo;t see themselves in the standard canon.</div>
+      <div class="work-badge">Coming Soon</div>
+      <div class="work-card-link">Learn more &rarr;</div>
+    </a>
   </div>
 </section>
 <section class="sec">
@@ -298,7 +312,7 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
 </section>
 <div class="contact-wrap" id="contact"><section class="sec">
   <div class="contact-grid">
-    <div class="reveal"><div class="clabel">005 &mdash; Contact</div><h2 class="sh contact-sh">Got something<br><em>interesting?</em></h2><p class="contact-p">I'm always open to connecting with people working on things that matter &mdash; community, education, AI, civic stuff, or whatever you're building that you can't stop thinking about.</p><a href="mailto:obriendjames@gmail.com" class="btn-gold">Send an email &rarr;</a></div>
+    <div class="reveal"><div class="clabel">005 &mdash; Contact</div><h2 class="sh contact-sh">Got something<br><em>interesting?</em></h2><p class="contact-p">I&rsquo;m always open to connecting with people working on things that matter &mdash; community, education, AI, civic stuff, or whatever you&rsquo;re building that you can&rsquo;t stop thinking about.</p><a href="mailto:obriendjames@gmail.com" class="btn-gold">Send an email &rarr;</a></div>
     <div class="clinks reveal d1">
       <a href="mailto:obriendjames@gmail.com" class="clink"><div><div class="cll">Email</div><div class="clv">obriendjames@gmail.com</div></div><span class="carr">&rarr;</span></a>
       <a href="https://www.linkedin.com/in/obrien-d-james/" target="_blank" class="clink"><div><div class="cll">LinkedIn</div><div class="clv">/in/obrien-d-james</div></div><span class="carr">&rarr;</span></a>
@@ -306,7 +320,7 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
     </div>
   </div>
 </section></div>
-<footer><span>&copy; 2025 James Douglas O'Brien</span><span><span class="fdot"></span>New Haven, CT</span><span>jamesinthehouse.netlify.app</span></footer>
+<footer><span>&copy; 2025 James Douglas O&rsquo;Brien</span><span><span class="fdot"></span>New Haven, CT</span><span>jamesinthehouse.netlify.app</span></footer>
 <script>
 const cursor=document.getElementById('cursor');
 document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
