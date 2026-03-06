@@ -134,8 +134,10 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 footer{padding:1.75rem 2.5rem;border-top:1px solid var(--border2);display:flex;justify-content:space-between;align-items:center}
 footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.06em}
 .fdot{width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;margin:0 .75rem;vertical-align:middle}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
-.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.visible{opacity:1;transform:none}
+.reveal{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}
+.js-loaded .reveal{opacity:0;transform:translateY(28px)}
+.js-loaded .reveal.visible{opacity:1;transform:none}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:900px){body{cursor:auto}#cursor,#prog,#pill,.scroll-hint{display:none}.hero{grid-template-columns:1fr;min-height:auto}.hero-photo{height:60vw}.hero-text{padding:3rem 1.5rem 4rem}.about-grid,.tl-header,.contact-grid{grid-template-columns:1fr;gap:2.5rem}.work-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.skill-col{border-right:none;border-bottom:1px solid var(--border2)}.tl-panel.active{grid-template-columns:1fr}.sec{padding:4rem 1.5rem}nav{padding:1.25rem 1.5rem}footer{flex-direction:column;gap:.5rem;text-align:center}}
@@ -321,6 +323,7 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
 </section></div>
 <footer><span>&copy; 2025 James Douglas O&rsquo;Brien</span><span><span class="fdot"></span>New Haven, CT</span><span>jamesinthehouse.netlify.app</span></footer>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.body.classList.add('js-loaded');
 const cursor=document.getElementById('cursor');
 document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
 document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('big'));el.addEventListener('mouseleave',()=>cursor.classList.remove('big'))});
@@ -330,7 +333,7 @@ function type(){const p=phrases[pi];if(!del){tw.textContent=p.slice(0,ci+1);ci++
 setTimeout(type,1200);
 const hp=document.getElementById('heroPhoto');
 window.addEventListener('scroll',()=>{if(hp&&window.scrollY<window.innerHeight)hp.style.transform='translateY('+window.scrollY*.25+'px) scale(1.02)'},{ passive:true});
-const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.08});
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 const pnodes=document.querySelectorAll('.pnode');
 const so=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)pnodes.forEach(n=>n.classList.toggle('active',n.dataset.t===x.target.id))}),{threshold:.4});
