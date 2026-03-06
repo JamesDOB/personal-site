@@ -61,7 +61,7 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .mbar{background:var(--gold);padding:.65rem 0;overflow:hidden}
 .mtrack{display:flex;gap:3rem;animation:mq 30s linear infinite;white-space:nowrap;width:max-content}
 .mi{font-family:'Inconsolata',monospace;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--bg);display:flex;align-items:center;gap:1rem;flex-shrink:0}
-.mi::after{content:'\25C6';font-size:.4rem}
+.mi::after{content:'';display:none}
 .sec{padding:7rem 2.5rem;max-width:1200px;margin:0 auto}
 .clabel{font-family:'Inconsolata',monospace;font-size:.65rem;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem}
 .clabel::before{content:'';width:24px;height:1px;background:var(--gold)}
@@ -170,7 +170,7 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
   <div class="hero-photo"><img src="New_Headshot.png" alt="James O'Brien" id="heroPhoto"/></div>
   <div class="hero-text">
     <p class="hero-eyebrow">New Haven, CT &middot; Community, Product, Marketing &amp; Leadership</p>
-    <h1 class="hero-name"><span>James</span><span class="it">O'Brien.</span><span class="out">Builder.</span></h1>
+    <h1 class="hero-name"><span>James</span><span class="it">O'Brien.</span></h1>
     <div class="tw-wrap"><span id="tw"></span></div>
     <div class="hero-rule"></div>
     <p class="hero-sub">I build communities and scale operational systems for mission-driven organizations &mdash; rooted in a belief that people show up as their best selves when <strong>psychological safety and belonging</strong> are in place.</p>
@@ -231,7 +231,7 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
     </div>
     <div class="tl-panels">
       <div class="tl-panel active" id="job0">
-        <div><div class="tl-co">Schoolhouse.world</div><div class="tl-period">Jun 2025 &ndash; Present</div><div class="tl-tag">Edtech</div></div>
+        <div><div class="tl-co">Schoolhouse.world</div><div class="tl-period">Jun 2025 &ndash; Present</div><div class="tl-period">Remote</div><div class="tl-tag">Edtech</div></div>
         <div><div class="tl-role">Head of Community (Foundations)</div><ul class="tl-bullets">
           <li>Diagnosed infrastructure strain from rapid growth and built a 6&ndash;12 month roadmap across Community, Trust &amp; Safety, and Volunteer Management</li>
           <li>Leading a team of <strong>3 staff and 25 volunteer leads</strong>, maintaining platform stability (70% belonging, 85 CSAT, 45 NPS) while scaling</li>
@@ -239,7 +239,7 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
         </ul></div>
       </div>
       <div class="tl-panel" id="job1">
-        <div><div class="tl-co">Schoolhouse.world</div><div class="tl-period">Aug 2023 &ndash; Jun 2025</div><div class="tl-tag">Edtech</div></div>
+        <div><div class="tl-co">Schoolhouse.world</div><div class="tl-period">Aug 2023 &ndash; Jun 2025</div><div class="tl-period">Remote</div><div class="tl-tag">Edtech</div></div>
         <div><div class="tl-role">Learning Community Lead</div><ul class="tl-bullets">
           <li>Built the College Admissions Workshop from scratch: <strong>30 tutors, 150 learners, 95% satisfaction</strong>, 2x marketplace engagement &mdash; adopted as an official program offering</li>
           <li>Rebuilt the volunteer experience end-to-end &mdash; ops, management, incentives, recruiting, and onboarding &mdash; for a program of <strong>~200 virtual volunteers</strong> at any given time; NPS from <strong>+30 to +70</strong></li>
@@ -248,7 +248,7 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
         </ul></div>
       </div>
       <div class="tl-panel" id="job2">
-        <div><div class="tl-co">co:census</div><div class="tl-period">Jan 2022 &ndash; Aug 2023</div><div class="tl-tag">Civic Tech</div></div>
+        <div><div class="tl-co">co:census</div><div class="tl-period">Jan 2022 &ndash; Aug 2023</div><div class="tl-period">Brooklyn, NY</div><div class="tl-tag">Civic Tech</div></div>
         <div><div class="tl-role">CS &amp; Product Marketing Lead</div><ul class="tl-bullets">
           <li>After a major contract loss, built Learning Labs &mdash; a pivot that generated <strong>$45K in its first cohort</strong> and gave the company a new revenue line</li>
           <li>Co-designed GTM combining storytelling, public-sector content, conference presence, and grassroots partnerships (Van Alen Institute)</li>
@@ -257,14 +257,14 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
         </ul></div>
       </div>
       <div class="tl-panel" id="job3">
-        <div><div class="tl-co">co:census</div><div class="tl-period">Jan 2021 &ndash; Dec 2021</div><div class="tl-tag">Civic Tech</div></div>
+        <div><div class="tl-co">co:census</div><div class="tl-period">Jan 2021 &ndash; Dec 2021</div><div class="tl-period">Brooklyn, NY</div><div class="tl-tag">Civic Tech</div></div>
         <div><div class="tl-role">Account Manager</div><ul class="tl-bullets">
           <li>Built the customer &amp; sales enablement playbook from scratch &mdash; adopted org-wide, improving onboarding and product fluency across B2B &amp; B2G clients</li>
           <li>Delivered high-touch account management to enterprise and public-sector clients while collaborating with Product on sprint planning and roadmap prioritization</li>
         </ul></div>
       </div>
       <div class="tl-panel" id="job4">
-        <div><div class="tl-co">PS/IS 384, Brooklyn</div><div class="tl-period">Sep 2016 &ndash; Jan 2019</div><div class="tl-tag">Education</div></div>
+        <div><div class="tl-co">PS/IS 384</div><div class="tl-period">Sep 2016 &ndash; Jan 2019</div><div class="tl-period">Brooklyn, NY</div><div class="tl-tag">Education</div></div>
         <div><div class="tl-role">ELA Teacher</div><ul class="tl-bullets">
           <li>Designed CCSS-aligned curricula rooted in social relevance and assessment data &mdash; taught at the school I attended as a kid, which made this deeply personal</li>
           <li>Deepened student engagement and drove stronger end-of-year academic gains through culturally relevant, data-informed instruction</li>
@@ -318,7 +318,6 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
     <div class="clinks reveal d1">
       <a href="/cdn-cgi/l/email-protection#315e534358545f555b505c544271565c50585d1f525e5c" class="clink"><div><div class="cll">Email</div><div class="clv"><span class="__cf_email__" data-cfemail="b3dcd1c1dad6ddd7d9d2ded6c0f3d4ded2dadf9dd0dcde">[email&#160;protected]</span></div></div><span class="carr">&rarr;</span></a>
       <a href="https://www.linkedin.com/in/obrien-d-james/" target="_blank" class="clink"><div><div class="cll">LinkedIn</div><div class="clv">/in/obrien-d-james</div></div><span class="carr">&rarr;</span></a>
-      <a href="tel:7188102587" class="clink"><div><div class="cll">Phone</div><div class="clv">718-810-2587</div></div><span class="carr">&rarr;</span></a>
     </div>
   </div>
 </section></div>
