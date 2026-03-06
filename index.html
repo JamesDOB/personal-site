@@ -140,6 +140,26 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:900px){body{cursor:auto}#cursor,#prog,#pill,.scroll-hint{display:none}.hero{grid-template-columns:1fr;min-height:auto}.hero-photo{height:60vw}.hero-text{padding:3rem 1.5rem 4rem}.about-grid,.tl-header,.contact-grid{grid-template-columns:1fr;gap:2.5rem}.work-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.skill-col{border-right:none;border-bottom:1px solid var(--border2)}.tl-panel.active{grid-template-columns:1fr}.sec{padding:4rem 1.5rem}nav{padding:1.25rem 1.5rem}footer{flex-direction:column;gap:.5rem;text-align:center}}
+
+.carousel-wrap{position:relative;overflow:hidden}
+.carousel-track{display:flex;gap:1.5rem;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.carousel-track .work-card{min-width:calc(47% - .75rem);max-width:calc(47% - .75rem);background:var(--bg3);border:1px solid var(--border2);padding:2rem;position:relative;overflow:hidden;flex-shrink:0;display:flex;flex-direction:column}
+.carousel-track .work-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height .3s}
+.carousel-track .work-card:hover::before{height:100%}
+.work-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem}
+.work-card-tag{font-family:'Inconsolata',monospace;font-size:.62rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
+.work-card-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:.75rem;line-height:1.2}
+.work-card-desc{font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:1.5rem;flex:1}
+.active-link{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:gap .2s;cursor:none}
+.active-link:hover{gap:.75rem}
+.disabled-link{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;cursor:not-allowed;user-select:none}
+.carousel-controls{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:2rem}
+.carousel-btn{background:none;border:1px solid var(--dim);color:var(--muted);width:2.5rem;height:2.5rem;font-size:1rem;cursor:none;transition:border-color .2s,color .2s;display:flex;align-items:center;justify-content:center}
+.carousel-btn:hover{border-color:var(--gold);color:var(--gold)}
+.cdot{width:6px;height:6px;border-radius:50%;background:var(--dim);cursor:none;transition:background .2s}
+.cdot.active{background:var(--gold)}
+.carousel-dots{display:flex;gap:.5rem;align-items:center}
+@media(max-width:900px){.carousel-track .work-card{min-width:85%}}
 </style>
 </head>
 <body>
@@ -155,7 +175,7 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
   <div class="pline"></div>
   <div class="pnode" data-t="contact"><span class="plabel">Contact</span><div class="pdot"></div></div>
 </div>
-<div id="pill"><div class="pill-dot"></div><div class="pill-text">Currently building &rarr; <span>community at scale</span></div></div>
+<div id="pill"><div class="pill-dot"></div><div class="pill-text">Currently building &rarr; <span>community &amp; belonging at scale</span></div></div>
 <nav>
   <div class="nav-logo">J.D. O'Brien</div>
   <ul class="nav-links">
@@ -173,7 +193,7 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
     <h1 class="hero-name"><span>James</span><span class="it">O'Brien.</span></h1>
     <div class="tw-wrap"><span id="tw"></span></div>
     <div class="hero-rule"></div>
-    <p class="hero-sub">I build communities and scale operational systems for mission-driven organizations &mdash; rooted in a belief that people show up as their best selves when <strong>psychological safety and belonging</strong> are in place.</p>
+    <p class="hero-sub">Strategist, systems builder, people manager. I help small teams scale thoughtfully &mdash; from 0&rarr;1 and beyond.</p>
     <div class="hero-ctas"><a href="#about" class="btn-gold">Learn more</a><a href="#contact" class="btn-ghost">Let's connect</a></div>
   </div>
   <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
@@ -275,33 +295,55 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
 </section></div>
 <section class="sec" id="projects">
   <div class="reveal"><div class="clabel">003 &mdash; Case Studies</div><h2 class="sh">Things I&rsquo;ve <em>built.</em></h2></div>
-  <div class="work-grid reveal d1">
-    <a href="work.html#admissions" class="work-card">
-      <div class="work-card-tag">0&rarr;1 Program Design</div>
-      <div class="work-card-title">College Admissions Workshop</div>
-      <div class="work-card-desc">Built a full peer tutoring program from scratch &mdash; recruited tutors, validated demand, hit 95% satisfaction, and got it adopted as an official offering.</div>
-      <div class="work-card-link">Read case study &rarr;</div>
-    </a>
-    <a href="work.html#slackbot" class="work-card">
-      <div class="work-card-tag">Trust &amp; Safety &middot; Community</div>
-      <div class="work-card-title">Custom Slackbot Infrastructure</div>
-      <div class="work-card-desc">Built automated moderation workflows and custom Slackbots for a 20K+ tutor community &mdash; reinforcing policy, surfacing risk, strengthening engagement.</div>
-      <div class="work-card-link">Read case study &rarr;</div>
-    </a>
-    <a href="work.html#neighborhood" class="work-card">
-      <div class="work-card-tag">AI &middot; Product</div>
-      <div class="work-card-title">The Neighborhood</div>
-      <div class="work-card-desc">An app designed to help you find your people, locally &mdash; focused on building real IRL connections in an increasingly online world.</div>
-      <div class="work-badge">In Progress</div>
-      <div class="work-card-link">Learn more &rarr;</div>
-    </a>
-    <a href="work.html#curriculum" class="work-card">
-      <div class="work-card-tag">Education &middot; Curriculum Design</div>
-      <div class="work-card-title">Culturally Relevant Curriculum</div>
-      <div class="work-card-desc">Built a full ELA curriculum from scratch, rooted in social relevance and student identity &mdash; for the kids who don&rsquo;t see themselves in the standard canon.</div>
-      <div class="work-badge">Coming Soon</div>
-      <div class="work-card-link">Learn more &rarr;</div>
-    </a>
+  <div class="carousel-wrap reveal d1">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="work-card">
+        <div class="work-card-top">
+          <div class="work-card-tag">0&rarr;1 Program Design</div>
+          <div class="work-badge">Coming Soon</div>
+        </div>
+        <div class="work-card-title">College Admissions Workshop</div>
+        <div class="work-card-desc">Built a full peer tutoring program from scratch &mdash; recruited tutors, validated demand, hit 95% satisfaction, and got it adopted as an official offering.</div>
+        <a href="work.html#admissions" class="work-card-link active-link">Read case study &rarr;</a>
+      </div>
+      <div class="work-card">
+        <div class="work-card-top">
+          <div class="work-card-tag">Trust &amp; Safety &middot; Community</div>
+          <div class="work-badge">Coming Soon</div>
+        </div>
+        <div class="work-card-title">Custom Slackbot Infrastructure</div>
+        <div class="work-card-desc">Built automated moderation workflows and custom Slackbots for a 20K+ tutor community &mdash; reinforcing policy, surfacing risk, strengthening engagement.</div>
+        <span class="work-card-link disabled-link">Coming soon &mdash;</span>
+      </div>
+      <div class="work-card">
+        <div class="work-card-top">
+          <div class="work-card-tag">AI &middot; Product</div>
+          <div class="work-badge">Coming Soon</div>
+        </div>
+        <div class="work-card-title">The Neighborhood</div>
+        <div class="work-card-desc">An app designed to help you find your people, locally &mdash; focused on building real IRL connections in an increasingly online world.</div>
+        <span class="work-card-link disabled-link">Coming soon &mdash;</span>
+      </div>
+      <div class="work-card">
+        <div class="work-card-top">
+          <div class="work-card-tag">Education &middot; Curriculum Design</div>
+          <div class="work-badge">Coming Soon</div>
+        </div>
+        <div class="work-card-title">Culturally Relevant Curriculum</div>
+        <div class="work-card-desc">Built a full ELA curriculum from scratch, rooted in social relevance and student identity &mdash; for the kids who don&rsquo;t see themselves in the standard canon.</div>
+        <span class="work-card-link disabled-link">Coming soon &mdash;</span>
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="prevBtn" onclick="moveCarousel(-1)">&#8592;</button>
+      <div class="carousel-dots">
+        <span class="cdot active" onclick="goToSlide(0)"></span>
+        <span class="cdot" onclick="goToSlide(1)"></span>
+        <span class="cdot" onclick="goToSlide(2)"></span>
+        <span class="cdot" onclick="goToSlide(3)"></span>
+      </div>
+      <button class="carousel-btn" id="nextBtn" onclick="moveCarousel(1)">&#8594;</button>
+    </div>
   </div>
 </section>
 <section class="sec">
@@ -322,7 +364,24 @@ footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--mute
   </div>
 </section></div>
 <footer><span>&copy; 2025 James Douglas O&rsquo;Brien</span><span><span class="fdot"></span>New Haven, CT</span><span>jamesinthehouse.netlify.app</span></footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+// CAROUSEL
+let current = 0;
+const track = document.getElementById('carouselTrack');
+const cards = track.querySelectorAll('.work-card');
+const dots = document.querySelectorAll('.cdot');
+function updateCarousel() {
+  const cardWidth = cards[0].offsetWidth + 24;
+  track.style.transform = 'translateX(-' + (current * cardWidth) + 'px)';
+  dots.forEach((d,i) => d.classList.toggle('active', i === current));
+}
+function moveCarousel(dir) {
+  current = Math.max(0, Math.min(cards.length - 1, current + dir));
+  updateCarousel();
+}
+function goToSlide(i) { current = i; updateCarousel(); }
+window.addEventListener('resize', updateCarousel);
+</script><script>
 const cursor=document.getElementById('cursor');
 cursor.style.opacity='0';
 document.addEventListener('mousemove',e=>{
@@ -352,5 +411,26 @@ document.querySelectorAll('.tl-tab').forEach(t=>t.addEventListener('click',()=>{
   panel.classList.add('active');
   void panel.offsetWidth; // force reflow
 }));
+
+// CAROUSEL
+let current = 0;
+const track = document.getElementById('carouselTrack');
+const cards = track.querySelectorAll('.work-card');
+const dots = document.querySelectorAll('.cdot');
+function updateCarousel() {
+  const gap = 24;
+  const cardWidth = cards[0].offsetWidth + gap;
+  track.style.transform = 'translateX(-' + (current * cardWidth) + 'px)';
+  dots.forEach((d,i) => d.classList.toggle('active', i === current));
+  document.getElementById('prevBtn').style.opacity = current === 0 ? '0.3' : '1';
+  document.getElementById('nextBtn').style.opacity = current >= cards.length - 2 ? '0.3' : '1';
+}
+function moveCarousel(dir) {
+  current = Math.max(0, Math.min(cards.length - 2, current + dir));
+  updateCarousel();
+}
+function goToSlide(i) { current = Math.min(i, cards.length - 2); updateCarousel(); }
+window.addEventListener('resize', updateCarousel);
+setTimeout(updateCarousel, 100);
 </script>
 </body></html>
