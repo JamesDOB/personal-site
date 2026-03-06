@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Case Studies &mdash; James O'Brien</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;500;600;700;800&family=Inconsolata:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0E0C0A;--bg2:#141210;--bg3:#1C1916;--ink:#F0EBE3;--muted:#7A7168;--dim:#3D3830;--gold:#C8963E;--gold2:#D4A44A;--border:rgba(200,150,62,0.15);--border2:rgba(200,150,62,0.07)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Syne',sans-serif;overflow-x:hidden;cursor:none}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;opacity:.38;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.09'/%3E%3C/svg%3E")}
+#cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;box-shadow:0 0 8px rgba(200,150,62,.6)}
+#cursor.big{width:18px;height:18px}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2.5rem}
+nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(14,12,10,.96),transparent);pointer-events:none}
+.nav-logo{font-family:'Inconsolata',monospace;font-size:.78rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;position:relative;z-index:1;text-decoration:none}
+.nav-back{font-family:'Inconsolata',monospace;font-size:.72rem;color:var(--muted);text-decoration:none;letter-spacing:.12em;text-transform:uppercase;transition:color .2s;position:relative;z-index:1;cursor:none}
+.nav-back:hover{color:var(--gold)}
+.page-hero{padding:10rem 2.5rem 5rem;max-width:1200px;margin:0 auto}
+.page-eyebrow{font-family:'Inconsolata',monospace;font-size:.68rem;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem}
+.page-title{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5rem);font-weight:900;line-height:.95;letter-spacing:-.02em;margin-bottom:1.5rem}
+.page-title em{font-style:italic;color:var(--gold)}
+.page-sub{font-size:1.05rem;color:var(--muted);line-height:1.75;max-width:560px}
+.cases{max-width:1200px;margin:0 auto;padding:0 2.5rem 8rem}
+.case{border-top:1px solid var(--border2);padding:3.5rem 0}
+.case:last-child{border-bottom:1px solid var(--border2)}
+.case-header{display:grid;grid-template-columns:1fr auto;align-items:start;gap:2rem;cursor:none;margin-bottom:0}
+.case-header-left{}
+.case-tag{font-family:'Inconsolata',monospace;font-size:.65rem;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.6rem}
+.case-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;line-height:1.1;transition:color .2s}
+.case:hover .case-title{color:var(--gold)}
+.case-toggle{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;background:none;border:1px solid var(--dim);padding:.5rem 1rem;cursor:none;transition:border-color .2s,color .2s;white-space:nowrap;margin-top:.5rem}
+.case-toggle:hover{border-color:var(--gold);color:var(--gold)}
+.case-badge{display:inline-block;font-family:'Inconsolata',monospace;font-size:.6rem;padding:.2rem .6rem;border:1px solid var(--border);color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-left:1rem;vertical-align:middle}
+.case-body{display:none;margin-top:2.5rem;animation:expand .4s cubic-bezier(.16,1,.3,1) forwards}
+.case-body.open{display:block}
+@keyframes expand{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.case-content p{font-size:.95rem;color:var(--muted);line-height:1.85;margin-bottom:1.2rem}
+.case-content p strong{color:var(--ink);font-weight:600}
+.case-section-label{font-family:'Inconsolata',monospace;font-size:.62rem;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.75rem;margin-top:1.75rem}
+.case-bullets{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.2rem}
+.case-bullets li{font-size:.9rem;color:var(--muted);line-height:1.65;padding-left:1.25rem;position:relative}
+.case-bullets li::before{content:'\2014';position:absolute;left:0;color:var(--gold);font-size:.75rem}
+.case-bullets li strong{color:var(--ink);font-weight:600}
+.case-sidebar{}
+.case-stat-block{background:var(--bg3);border:1px solid var(--border2);border-left:3px solid var(--gold);padding:1.5rem;margin-bottom:1rem}
+.case-stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:.25rem}
+.case-stat-label{font-family:'Inconsolata',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.case-meta{background:var(--bg2);border:1px solid var(--border2);padding:1.5rem;margin-bottom:1rem}
+.case-meta-row{display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border2);font-family:'Inconsolata',monospace;font-size:.7rem}
+.case-meta-row:last-child{border-bottom:none}
+.case-meta-key{color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.case-meta-val{color:var(--ink)}
+.photo-placeholder{background:var(--bg3);border:1px solid var(--border2);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.photo-placeholder span{font-family:'Inconsolata',monospace;font-size:.65rem;color:var(--dim);letter-spacing:.1em;text-transform:uppercase}
+.coming-soon-body{padding:2rem;background:var(--bg3);border:1px solid var(--border2);margin-top:2rem}
+.coming-soon-body p{font-size:.95rem;color:var(--muted);line-height:1.75}
+footer{padding:1.75rem 2.5rem;border-top:1px solid var(--border2);display:flex;justify-content:space-between;align-items:center}
+footer span{font-family:'Inconsolata',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.06em}
+.fdot{width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;margin:0 .75rem;vertical-align:middle}
+@media(max-width:900px){body{cursor:auto}#cursor{display:none}.case-grid{grid-template-columns:1fr}.page-hero,.cases{padding-left:1.5rem;padding-right:1.5rem}nav{padding:1.25rem 1.5rem}footer{flex-direction:column;gap:.5rem;text-align:center}}
+</style>
+</head>
+<body>
+<div id="cursor"></div>
+<nav>
+  <a href="index.html" class="nav-logo">J.D. O'Brien</a>
+  <a href="index.html" class="nav-back">&larr; Back home</a>
+</nav>
+<div class="page-hero">
+  <div class="page-eyebrow">Case Studies</div>
+  <h1 class="page-title">Things I've<br><em>built.</em></h1>
+  <p class="page-sub">A closer look at some of the work I'm most proud of &mdash; the problem, the approach, and what came out the other side.</p>
+</div>
+<div class="cases">
+
+  <div class="case" id="admissions">
+    <div class="case-header" onclick="toggleCase('admissions-body', this)">
+      <div class="case-header-left">
+        <div class="case-tag">0&rarr;1 Program Design &middot; Edtech</div>
+        <div class="case-title">College Admissions Workshop</div>
+      </div>
+      <button class="case-toggle">Expand &darr;</button>
+    </div>
+    <div class="case-body" id="admissions-body">
+      <div class="case-grid">
+        <div class="case-content">
+          <div class="photo-placeholder"><span>Photo / Screenshot coming soon</span></div>
+          <div class="case-section-label">The Problem</div>
+          <p>Schoolhouse.world had 160K+ learners on platform but no structured support for one of the highest-stakes moments in a student's life: college admissions. Students were asking questions in community spaces with no consistent, quality guidance. The gap was real and the demand was there &mdash; nobody had validated it yet.</p>
+          <div class="case-section-label">The Approach</div>
+          <p>I built the College Admissions Workshop Program from scratch &mdash; no playbook, no precedent. That meant recruiting and vetting tutors, designing the program structure, setting quality standards, and running the first cohort end-to-end.</p>
+          <ul class="case-bullets">
+            <li>Recruited and onboarded <strong>30 tutors</strong> with relevant experience</li>
+            <li>Designed the session format, tutor guidelines, and learner intake process</li>
+            <li>Ran feedback loops throughout to identify friction and improve in real time</li>
+            <li>Tracked engagement and satisfaction to build the case for adoption</li>
+          </ul>
+          <div class="case-section-label">The Outcome</div>
+          <p>The program hit <strong>95% learner satisfaction</strong> and drove <strong>2x marketplace engagement</strong> compared to baseline. It validated real demand and was adopted as an official Schoolhouse.world program offering &mdash; from 0 to institutional in one cohort.</p>
+        </div>
+        <div class="case-sidebar">
+          <div class="case-stat-block"><div class="case-stat-num">95%</div><div class="case-stat-label">Learner satisfaction</div></div>
+          <div class="case-stat-block"><div class="case-stat-num">2x</div><div class="case-stat-label">Marketplace engagement vs. baseline</div></div>
+          <div class="case-stat-block"><div class="case-stat-num">30</div><div class="case-stat-label">Tutors recruited &amp; onboarded</div></div>
+          <div class="case-meta">
+            <div class="case-meta-row"><span class="case-meta-key">Org</span><span class="case-meta-val">Schoolhouse.world</span></div>
+            <div class="case-meta-row"><span class="case-meta-key">Role</span><span class="case-meta-val">Learning Community Lead</span></div>
+            <div class="case-meta-row"><span class="case-meta-key">Year</span><span class="case-meta-val">2024</span></div>
+            <div class="case-meta-row"><span class="case-meta-key">Type</span><span class="case-meta-val">0&rarr;1 Program Launch</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case" id="slackbot">
+    <div class="case-header" onclick="toggleCase('slackbot-body', this)">
+      <div class="case-header-left">
+        <div class="case-tag">Trust &amp; Safety &middot; Community Infrastructure</div>
+        <div class="case-title">Custom Slackbot &amp; Moderation Infrastructure</div>
+      </div>
+      <button class="case-toggle">Expand &darr;</button>
+    </div>
+    <div class="case-body" id="slackbot-body">
+      <div class="case-grid">
+        <div class="case-content">
+          <div class="photo-placeholder"><span>Photo / Screenshot coming soon</span></div>
+          <div class="case-section-label">The Problem</div>
+          <p>A Slack community of 20,000+ tutors is a lot to manage. Policy violations were happening in real time, high-risk interactions were hard to surface, and volunteer moderators had no reliable tools to do their jobs consistently. The community was growing faster than our ability to keep it safe.</p>
+          <div class="case-section-label">The Approach</div>
+          <p>I built out a moderation infrastructure layer &mdash; automated workflows and custom Slackbots designed to do the work that doesn't scale manually.</p>
+          <ul class="case-bullets">
+            <li>Built custom Slackbots to reinforce community policy passively and consistently</li>
+            <li>Created automated workflows to flag and surface high-risk interactions for human review</li>
+            <li>Designed systems to strengthen day-to-day engagement and reduce moderator burden</li>
+            <li>Paired the tooling with updated moderator training and escalation protocols</li>
+          </ul>
+          <div class="case-section-label">The Outcome</div>
+          <p>The community became meaningfully easier to manage at scale. Moderators had better tools, risky interactions got caught earlier, and the day-to-day health of the community improved &mdash; all without growing the moderation team headcount.</p>
+        </div>
+        <div class="case-sidebar">
+          <div class="case-stat-block"><div class="case-stat-num">20K+</div><div class="case-stat-label">Tutors in community</div></div>
+          <div class="case-stat-block"><div class="case-stat-num">0&rarr;1</div><div class="case-stat-label">Infrastructure built from scratch</div></div>
+          <div class="case-meta">
+            <div class="case-meta-row"><span class="case-meta-key">Org</span><span class="case-meta-val">Schoolhouse.world</span></div>
+            <div class="case-meta-row"><span class="case-meta-key">Role</span><span class="case-meta-val">Learning Community Lead</span></div>
+            <div class="case-meta-row"><span class="case-meta-key">Type</span><span class="case-meta-val">Trust &amp; Safety / Tooling</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case" id="neighborhood">
+    <div class="case-header" onclick="toggleCase('neighborhood-body', this)">
+      <div class="case-header-left">
+        <div class="case-tag">AI &middot; Product <span class="case-badge">In Progress</span></div>
+        <div class="case-title">The Neighborhood</div>
+      </div>
+      <button class="case-toggle">Expand &darr;</button>
+    </div>
+    <div class="case-body" id="neighborhood-body">
+      <div class="coming-soon-body">
+        <p><strong>An app designed to help you find your people, locally.</strong></p>
+        <br/>
+        <p>The internet is incredible at connecting people across distances. It's less good at helping you find the person three blocks away who shares your weird obsession with 14th century Italian literature. The Neighborhood is about fixing that &mdash; building real IRL connections in an increasingly online world.</p>
+        <br/>
+        <p style="color:var(--dim)">Full case study coming as the project develops.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="case" id="curriculum">
+    <div class="case-header" onclick="toggleCase('curriculum-body', this)">
+      <div class="case-header-left">
+        <div class="case-tag">Education &middot; Curriculum Design <span class="case-badge">Coming Soon</span></div>
+        <div class="case-title">Culturally Relevant ELA Curriculum</div>
+      </div>
+      <button class="case-toggle">Expand &darr;</button>
+    </div>
+    <div class="case-body" id="curriculum-body">
+      <div class="coming-soon-body">
+        <p><strong>Built from scratch, for the kids who don't see themselves in the standard canon.</strong></p>
+        <br/>
+        <p>Teaching ELA at the school I attended as a kid meant I knew exactly who was sitting in those seats. I designed a full CCSS-aligned curriculum rooted in social relevance, student identity, and real assessment data &mdash; because engagement isn't a nice-to-have, it's the whole game.</p>
+        <br/>
+        <p style="color:var(--dim)">Full case study coming soon.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<footer><span>&copy; 2025 James Douglas O'Brien</span><span><span class="fdot"></span>New Haven, CT</span><span>jamesinthehouse.netlify.app</span></footer>
+<script>
+const cursor=document.getElementById('cursor');
+document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
+document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('big'));el.addEventListener('mouseleave',()=>cursor.classList.remove('big'))});
+function toggleCase(id, header) {
+  const body = document.getElementById(id);
+  const btn = header.querySelector('.case-toggle');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  btn.textContent = isOpen ? 'Expand ↓' : 'Collapse ↑';
+}
+// Auto-open if hash matches
+const hash = window.location.hash.replace('#','');
+if(hash) {
+  const body = document.getElementById(hash+'-body');
+  const header = document.querySelector('#'+hash+' .case-header');
+  if(body && header) toggleCase(hash+'-body', header);
+}
+</script>
+</body></html>
